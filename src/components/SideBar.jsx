@@ -14,9 +14,10 @@ import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   let activeStyle = {
-    backgroundColor: "red",
     color: "white",
+    backgroundColor:" rgb(115, 82, 255)",
     borderRadius: "10px",
+    padding:"10px"
   };
   return (
     <div className="">
@@ -51,7 +52,7 @@ const SideBar = () => {
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           <MdGroup />
-          Emplooyes
+          Employees
         </NavLink>
         <NavLink
           to="customers"
