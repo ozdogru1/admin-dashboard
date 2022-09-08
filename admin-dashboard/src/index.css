@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main{
+    padding-top:10px;
+    padding-bottom:10px;
+    color:  #404040;
+    border-bottom: 1px solid  #cccccc;
+}
+
+.title{
+    margin-bottom:10px;
+    color:  white;
+    text-transform: uppercase;
+    opacity: .7;
+}
+
+.content{
+    padding-top:10px;
+    padding-bottom: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+    transition: all .1s;
+    font-size: 17px;
+}
+svg{
+    margin-right: 5px;
+}
+
+.content:hover{
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
+}
+
+.main:nth-last-child(1){
+    border: none;
+}

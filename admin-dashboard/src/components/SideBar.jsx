@@ -1,0 +1,96 @@
+import React from "react";
+import {
+  MdBusinessCenter,
+  MdEditCalendar,
+  MdGroups,
+  MdShoppingBag,
+} from "react-icons/md";
+import { MdShoppingCart } from "react-icons/md";
+import { MdGroup } from "react-icons/md";
+import { BiNews } from "react-icons/bi";
+import { MdDarkMode } from "react-icons/md";
+import { NavLink } from "react-router-dom";
+// import {MdLightMode} from "react-icons/md"
+
+const SideBar = () => {
+  let activeStyle = {
+    backgroundColor: "red",
+    color: "white",
+    borderRadius: "10px",
+  };
+  return (
+    <div className="">
+      <div className="flex items-center justify-between mb-8 mt-8">
+        <p className="text-slate-200 text-2xl ">Admin</p>
+        <MdDarkMode className="text-2xl text-white" />
+      </div>
+      <div className="main">
+        <h3 className="title">DashBoard</h3>
+        <NavLink
+          to="/"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          className="content"
+        >
+          <MdShoppingBag />
+          E-commerce
+        </NavLink>
+      </div>
+      <div className="main">
+        <h3 className="title">Pages</h3>
+        <NavLink
+          to="orders"
+          className="content"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          <MdShoppingCart />
+          Orders
+        </NavLink>
+        <NavLink
+          to="employees"
+          className="content"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          <MdGroup />
+          Emplooyes
+        </NavLink>
+        <NavLink
+          to="customers"
+          className="content"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          <MdGroups />
+          Customers
+        </NavLink>
+      </div>
+      <div className="main">
+        <h3 className="title">Apps</h3>
+        <NavLink
+          to="calendar"
+          className="content"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          <MdEditCalendar />
+          Calendar
+        </NavLink>
+        <NavLink
+          to="projectmanagment"
+          className="content"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          <MdBusinessCenter />
+          Project Managment
+        </NavLink>
+        <NavLink
+          to="news"
+          className="content"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          <BiNews />
+          News
+        </NavLink>
+      </div>
+    </div>
+  );
+};
+
+export default SideBar;
