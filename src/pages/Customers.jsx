@@ -13,31 +13,38 @@ const Customers = () => {
   useEffect(() => {
     fetchData();
   }, []);
-   console.log(customers);
+  console.log(customers);
 
   const columns = [
     {
-        name: "id",
-        selector: (row) => row.id,
-      },
-      {
-        name: "name",
-        selector: (row) => row.name,
-      },
+      name: "id",
+      selector: (row) => row.id,
+      sortable:true
+    },
+    {
+      name: "name",
+      selector: (row) => row.name,
+      sortable:true
+    },
     {
       name: "username",
       selector: (row) => row.username,
+      sortable:true
     },
     {
       name: "email",
       selector: (row) => row.email,
+      sortable:true
     },
   ];
 
-  
   return (
-    <div className=" my-auto h-full px-10 rounded-sm  ">
-      <DataTable title="Customers list"    columns={columns} data={customers}  defaultSortFieldId={1}/>
+    <div className="my-auto h-full px-10 rounded-2xl flex flex-col justify-center ">
+      <DataTable
+         columns={columns}
+        data={customers}
+        defaultSortFieldId={1}
+      />
     </div>
   );
 };

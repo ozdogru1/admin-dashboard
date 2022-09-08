@@ -18,7 +18,7 @@ const App = () => {
       <div className=' w-max px-5  bg-secondary-dark-bg'>
       <SideBar />
       </div>
-      <div className='grow-[1]  '>
+      <div className='grow-[1]  bg-[#030C40]'>
       <Routes>
         <Route index element={<Home />} />
         <Route path="customers" element={<Customers />} />

@@ -3,7 +3,7 @@ import DataTable from "react-data-table-component";
 import axios from "axios";
 const Orders = () => {
   const [orders, setOrders] = useState([]);
-  const url = "https://jsonplaceholder.typicode.com/comments";
+  const url = "https://fakestoreapi.com/products";
   const fetchData = () => {
     axios
       .get(url)
@@ -16,27 +16,37 @@ const Orders = () => {
 
   const columns = [
     {
-      name:"id",
-      selector:(row)=> row.id
+      name: "id",
+      selector: (row) => row.id,
+      sortable: true,
     },
-    
+
     {
-      name: "name",
-      selector: (row) => row.name,
+      name: "title",
+      selector: (row) => row.title.substr(0, 20),
+      sortable: true,
     },
     {
-      name: "order",
-      selector: (row) => row.body.substr(0,50),
+      name: "price",
+      selector: (row) => row.price,
+      sortable: true,
     },
+    {
+      name: "image",
+      selector: (row) => (
+        <img alt="img" width={50} height={50} src={row.image} />
+      ),
+     },
   ];
- 
+   
   return (
-    <div className=" my-auto h-full px-10 rounded-sm  ">
+    <div className=" my-auto h-full px-10 rounded-sm flex flex-col justify-center">
       <DataTable
         title="Order list"
         pagination
         columns={columns}
         data={orders}
+        defaultSortFieldId={1}
        />
     </div>
   );
