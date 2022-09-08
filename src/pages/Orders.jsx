@@ -15,6 +15,10 @@ const Orders = () => {
   }, []);
 
   const columns = [
+    {
+      name:"id",
+      selector:(row)=> row.id
+    },
     
     {
       name: "name",
