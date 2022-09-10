@@ -1,6 +1,5 @@
 import React from 'react'
-import SideBar from './components/SideBar'
-import Home from './pages/Home'
+ import Home from './pages/Home'
 import {
   Routes,
   Route,
@@ -11,11 +10,12 @@ import News from './pages/News';
 import Employees from './pages/Employees';
 import Orders from './pages/Orders';
 import ProjectManagment from './pages/ProjectManagment';
+import SideBar from './components/SideBar';
 
 const App = () => {
   return (
-    <div className='flex h-screen min-h-full'>
-      <div className=' w-max px-5  bg-secondary-dark-bg'>
+    <div className='flex h-auto min-h-screen'>
+      <div className=' w-[240px] min-w-max px-5 bg-secondary-dark-bg'>
       <SideBar />
       </div>
       <div className='grow-[1]  bg-[#030C40]'>

@@ -17,11 +17,11 @@ const SideBar = () => {
     color: "white",
     backgroundColor:" rgb(115, 82, 255)",
     borderRadius: "10px",
-    padding:"10px"
+    paddingLeft:"30px"
   };
   return (
     <div className="">
-      <div className="flex items-center justify-between mb-8 mt-8">
+      <div className="flex items-center justify-between mb-8 mt-8 ">
         <p className="text-slate-200 text-2xl ">Admin</p>
         <MdDarkMode className="text-2xl text-white" />
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
-import Ecommerce from '../components/E-commerce'
-import RevenueUpdates from '../components/RevenueUpdates'
+ import RevenueUpdates from '../components/RevenueUpdates'
+import Ecommerce from '../components/Statistics/E-commerce'
  
 const Home = () => {
   return (

@@ -1,6 +1,7 @@
+
+import { info } from "../../constants/info";
 import React from "react";
-import { info } from "../constants/info";
-const Ecommerce = () => {
+ const Ecommerce = () => {
   return (
     <div className="flex justify-center flex-wrap  ">
       {info.map((item) => (
@@ -16,3 +17,4 @@ const Ecommerce = () => {
 };
 
 export default Ecommerce;
+ 
