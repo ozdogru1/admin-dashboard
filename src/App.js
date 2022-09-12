@@ -5,8 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import Customers from './pages/Customers';
-import Calender from './pages/Calender';
-import News from './pages/News';
+ import News from './pages/News';
 import Employees from './pages/Employees';
 import Orders from './pages/Orders';
 import ProjectManagment from './pages/ProjectManagment';
@@ -22,8 +21,7 @@ const App = () => {
       <Routes>
         <Route index element={<Home />} />
         <Route path="customers" element={<Customers />} />
-        <Route path="calendar" element={<Calender />} />
-        <Route path='news' element={<News />} />
+         <Route path='news' element={<News />} />
         <Route path="employees" element={<Employees />} />
         <Route path="orders" element={<Orders />} />
         <Route path='projectmanagment' element={<ProjectManagment />} />

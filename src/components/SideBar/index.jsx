@@ -1,8 +1,7 @@
 import React from "react";
 import {
   MdBusinessCenter,
-  MdEditCalendar,
-  MdGroups,
+   MdGroups,
   MdShoppingBag,
 } from "react-icons/md";
 import { MdShoppingCart } from "react-icons/md";
@@ -65,14 +64,7 @@ const SideBar = () => {
       </div>
       <div className="main">
         <h3 className="title">Apps</h3>
-        <NavLink
-          to="calendar"
-          className="content"
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        >
-          <MdEditCalendar />
-          Calendar
-        </NavLink>
+        
         <NavLink
           to="projectmanagment"
           className="content"
