@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { faker } from '@faker-js/faker';
+import { faker } from "@faker-js/faker";
 
 ChartJS.register(
   CategoryScale,
@@ -69,11 +69,12 @@ export const data = {
   ],
 };
 
- 
-const Statistic = () => {
+const Chart = () => {
   return (
+    <div className="bg-secondary-dark-bg w-[80%] h-auto m-auto px-10 py-5 text-white rounded flex ">
       <Line options={options} data={data} />
-    )
-}
+    </div>
+  );
+};
 
-export default Statistic
+export default Chart;

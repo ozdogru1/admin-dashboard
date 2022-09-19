@@ -22,7 +22,7 @@ const SideBar = () => {
     <div className="">
       <div className="flex items-center justify-between mb-8 mt-8 ">
         <p className="text-slate-200 text-2xl ">Admin</p>
-        <MdDarkMode className="text-2xl text-white" />
+        <MdDarkMode className="text-2xl text-white"/>
       </div>
       <div className="main">
         <h3 className="title">DashBoard</h3>
