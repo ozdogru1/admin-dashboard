@@ -1,36 +1,71 @@
-import React from 'react'
- import Home from './pages/Home'
+import React, { useEffect } from 'react'
+import Home from './pages/Home'
 import {
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom";
 import Customers from './pages/Customers';
- import News from './pages/News';
+import News from './pages/News';
 import Employees from './pages/Employees';
 import Orders from './pages/Orders';
 import ProjectManagment from './pages/ProjectManagment';
 import SideBar from './components/SideBar';
 import Login from './pages/Login';
-import Register from './pages/Register';
+import { useSelector } from "react-redux";
 
 const App = () => {
+  const user = useSelector(state => state.user)
 
-   return (
+  const RequireAuth = ({ children }) => {
+    return user ? children : <Navigate to="/login" />
+  }
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(user))
+  }, [user])
+
+  return (
     <div className={`flex h-auto min-h-screen`}>
-       <div className=' w-[240px] min-w-max px-5 bg-secondary-dark-bg'>
-      <SideBar />
+      <div className=' w-[240px] min-w-max px-5 bg-secondary-dark-bg'>
+        <SideBar />
       </div>
       <div className='grow-[1]  bg-[#030C40]'>
-      <Routes>
-        <Route path='/'  element={<Home />} />
-        <Route path="customers" element={<Customers />} />
-         <Route path='news' element={<News />} />
-        <Route path="employees" element={<Employees />} />
-        <Route path="orders" element={<Orders />} />
-        <Route path='projectmanagment' element={<ProjectManagment />} />
-        <Route path='login' element={<Login/>}/>
-        <Route path='register' element={<Register/>}/>
-      </Routes>
+        <Routes>
+          <Route path='/' element={
+            <RequireAuth>
+              <Home />
+            </RequireAuth>
+
+          } />
+          <Route path="customers" element={
+            <RequireAuth>
+              <Customers />
+            </RequireAuth>
+          } />
+          <Route path='news' element={
+            <RequireAuth>
+              <News />
+            </RequireAuth>
+          } />
+          <Route path="employees" element={
+            <RequireAuth>
+              <Employees />
+            </RequireAuth>
+          } />
+          <Route path="orders" element={
+            <RequireAuth>
+              <Orders />
+            </RequireAuth>
+          } />
+          <Route path='projectmanagment' element={
+            <RequireAuth>
+              <ProjectManagment />
+            </RequireAuth>
+          } />
+          <Route path='login' element={
+            <Login />
+          } />
+        </Routes>
       </div>
     </div>
   )

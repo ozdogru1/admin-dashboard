@@ -9,9 +9,14 @@ import { MdGroup } from "react-icons/md";
 import { BiNews } from "react-icons/bi";
 import { MdDarkMode } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
 // import {MdLightMode} from "react-icons/md"
 
 const SideBar = () => {
+  const dispatch = useDispatch()
+  const handleLogout = () =>{
+    dispatch({type: "LOGOUT"})
+  }
   let activeStyle = {
     color: "white",
     backgroundColor:" rgb(115, 82, 255)",
@@ -81,6 +86,7 @@ const SideBar = () => {
           <BiNews />
           News
         </NavLink>
+        <button onClick={handleLogout} className="text-black rounded-lg  bg-white px-7 py-3  ">Logout</button>
       </div>
     </div>
   );

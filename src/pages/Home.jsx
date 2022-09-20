@@ -3,7 +3,7 @@ import Ecommerce from "../components/Statistics/E-commerce";
 import Chart from "../components/Charts";
 
 const Home = () => {
-  return (
+   return (
     <>
       <Ecommerce />
       <Chart />
