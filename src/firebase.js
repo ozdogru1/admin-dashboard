@@ -1,8 +1,8 @@
  import { initializeApp } from "firebase/app";
- import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+ import { getAuth } from "firebase/auth";
 
  const firebaseConfig = {
-  apiKey:process.env.REACT_APP_FİREBASE_KEY,
+  apiKey:"AIzaSyB8P67DwlEEbAF7vm0CicBVq0I5WMqOw_c",
   authDomain: "admin-db20c.firebaseapp.com",
   projectId: "admin-db20c",
   storageBucket: "admin-db20c.appspot.com",

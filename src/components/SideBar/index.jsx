@@ -1,8 +1,9 @@
 import React from "react";
 import {
   MdBusinessCenter,
-   MdGroups,
+  MdGroups,
   MdShoppingBag,
+  MdOutlineLogout,
 } from "react-icons/md";
 import { MdShoppingCart } from "react-icons/md";
 import { MdGroup } from "react-icons/md";
@@ -13,21 +14,30 @@ import { useDispatch } from "react-redux";
 // import {MdLightMode} from "react-icons/md"
 
 const SideBar = () => {
-  const dispatch = useDispatch()
-  const handleLogout = () =>{
-    dispatch({type: "LOGOUT"})
-  }
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
   let activeStyle = {
     color: "white",
-    backgroundColor:" rgb(115, 82, 255)",
+    backgroundColor: " rgb(115, 82, 255)",
     borderRadius: "10px",
-    paddingLeft:"30px"
+    paddingLeft: "30px",
   };
   return (
-    <div className="">
+    <div>
       <div className="flex items-center justify-between mb-8 mt-8 ">
         <p className="text-slate-200 text-2xl ">Admin</p>
-        <MdDarkMode className="text-2xl text-white"/>
+        <MdDarkMode className="text-2xl text-white" />
+      </div>
+      <div className="user main">
+        <button
+          onClick={handleLogout}
+          className="text-black rounded-lg  bg-white px-7 py-3 flex items-center"
+        >
+          Logout
+          <MdOutlineLogout className="ml-2" />
+        </button>
       </div>
       <div className="main">
         <h3 className="title">DashBoard</h3>
@@ -69,7 +79,7 @@ const SideBar = () => {
       </div>
       <div className="main">
         <h3 className="title">Apps</h3>
-        
+
         <NavLink
           to="projectmanagment"
           className="content"
@@ -86,7 +96,6 @@ const SideBar = () => {
           <BiNews />
           News
         </NavLink>
-        <button onClick={handleLogout} className="text-black rounded-lg  bg-white px-7 py-3  ">Logout</button>
       </div>
     </div>
   );

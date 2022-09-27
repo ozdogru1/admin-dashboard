@@ -13,10 +13,9 @@ import ProjectManagment from './pages/ProjectManagment';
 import SideBar from './components/SideBar';
 import Login from './pages/Login';
 import { useSelector } from "react-redux";
-
+  
 const App = () => {
   const user = useSelector(state => state.user)
-
   const RequireAuth = ({ children }) => {
     return user ? children : <Navigate to="/login" />
   }
@@ -65,7 +64,7 @@ const App = () => {
           <Route path='login' element={
             <Login />
           } />
-        </Routes>
+          </Routes>
       </div>
     </div>
   )
