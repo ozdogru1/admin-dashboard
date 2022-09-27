@@ -1,24 +1,27 @@
 import React from "react";
 import { useState } from "react";
 
-const AddNews = ({ onClose, addNewsHandler}) => {
-    const [newsData, setNewsData] = useState({
-        title:"",
-        content:""
-    })
-    const [error, setError] = useState(false)
-    const handleOnChange= (e) => {
-        setNewsData({...newsData, [e.target.name] : e.target.value})
+const AddNews = ({ onClose, addNewsHandler }) => {
+  const [newsData, setNewsData] = useState({
+    title: "",
+    content: "",
+  });
+  const [error, setError] = useState(false);
+  const handleOnChange = (e) => {
+    setNewsData({ ...newsData, [e.target.name]: e.target.value });
+  };
+  const submitNews = (e) => {
+    e.preventDefault();
+    if (
+      newsData.title.trim().length === 0 ||
+      newsData.content.trim().length === ""
+    ) {
+      setError(true);
     }
-    const submitNews = (e) => {
-        e.preventDefault()
-        if(newsData.title.trim().length === 0 || newsData.content.trim().length === ""){
-            setError(true)
-        }
-        addNewsHandler(newsData.title, newsData.content)
-        setNewsData({title : "", content: "" })
-        onClose()
-    }
+    addNewsHandler(newsData.title, newsData.content);
+    setNewsData({ title: "", content: "" });
+    onClose();
+  };
   return (
     <form onSubmit={submitNews}>
       <div
@@ -43,10 +46,7 @@ const AddNews = ({ onClose, addNewsHandler}) => {
             </div>
             <div className="p-6 space-y-6">
               <div>
-                <label
-                 
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                   Title
                 </label>
                 <input
@@ -60,10 +60,7 @@ const AddNews = ({ onClose, addNewsHandler}) => {
                 />
               </div>
               <div>
-                <label
-                
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-                >
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                   Your message
                 </label>
                 <textarea
@@ -82,7 +79,7 @@ const AddNews = ({ onClose, addNewsHandler}) => {
                 type="submit"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
-               Submit
+                Submit
               </button>
             </div>
           </div>

@@ -25,9 +25,12 @@ const App = () => {
 
   return (
     <div className={`flex h-auto min-h-screen`}>
-      <div className=' w-[240px] min-w-max px-5 bg-secondary-dark-bg'>
-        <SideBar />
+      {
+        user && <div className=' w-[240px] min-w-max px-5 bg-secondary-dark-bg'>
+       <SideBar/>
       </div>
+      }
+      
       <div className='grow-[1]  bg-[#030C40]'>
         <Routes>
           <Route path='/' element={
