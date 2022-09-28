@@ -81,14 +81,6 @@ const SideBar = () => {
         <h3 className="title">Apps</h3>
 
         <NavLink
-          to="projectmanagment"
-          className="content"
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        >
-          <MdBusinessCenter />
-          Project Managment
-        </NavLink>
-        <NavLink
           to="news"
           className="content"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}

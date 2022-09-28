@@ -9,13 +9,13 @@ import Customers from './pages/Customers';
 import News from './pages/News';
 import Employees from './pages/Employees';
 import Orders from './pages/Orders';
-import ProjectManagment from './pages/ProjectManagment';
-import SideBar from './components/SideBar';
+ import SideBar from './components/SideBar';
 import Login from './pages/Login';
 import { useSelector } from "react-redux";
   
 const App = () => {
   const user = useSelector(state => state.user)
+  
   const RequireAuth = ({ children }) => {
     return user ? children : <Navigate to="/login" />
   }
@@ -59,11 +59,7 @@ const App = () => {
               <Orders />
             </RequireAuth>
           } />
-          <Route path='projectmanagment' element={
-            <RequireAuth>
-              <ProjectManagment />
-            </RequireAuth>
-          } />
+         
           <Route path='login' element={
             <Login />
           } />
